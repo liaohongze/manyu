@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>鳗鲡堂</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
+    />
+
+    <link rel="stylesheet" href="./static/plugin/swiper/css/swiper.min.css" />
+    <link rel="stylesheet" href="./static/lib/111/mobileSelect.css" />
+    <link rel="stylesheet" href="./static/lib/111/need/layer.css" />
+    <script src="./static/lib/jquery.min.js"></script>
+
+    <style>
+      html,
+      body {
+        position: relative;
+        height: 100%;
+      }
+
+      body {
+        background: #eee;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color: #000;
+        margin: 0;
+        padding: 0;
+      }
+
+      .swiper-container {
+        width: 100%;
+        height: 100%;
+      }
+
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+        position: relative;
+      }
+
+      .swiper-slide img {
+        width: 100%;
+        height: 100%;
+      }
+
+      .swiper-slide img:nth-of-type(2) {
+        position: absolute;
+        top: 50%;
+        right: -2vw;
+        width: 8vw;
+        height: 2vw;
+        transform: rotateZ(-90deg);
+      }
+
+      .swiper-slide p {
+        position: absolute;
+        top: 120vw;
+        bottom: 20vw;
+        right: 21vw;
+        color: #595959;
+        font-size: 3.2vw;
+        text-align: left;
+        writing-mode: tb-rl;
+      }
+
+      .swiper-slide p:nth-of-type(2) {
+        right: 28vw;
+      }
+
+      .swiper-slide p:nth-of-type(3) {
+        right: 32vw;
+      }
+
+      .swiper-slide.p4 p:nth-of-type(1) {
+        right: 21vw;
+      }
+
+      .swiper-slide.p4 p:nth-of-type(2) {
+        right: 28vw;
+      }
+
+      .swiper-slide.p4 p:nth-of-type(3) {
+        right: 34vw;
+      }
+
+      .swiper-slide.p4 .swiper-container-v2 {
+        position: absolute;
+        top: 4.2vw;
+      }
+
+      .swiper-slide.p4 .swiper-container-v2,
+      .swiper_img {
+        width: 92.4vw;
+        height: 104vw;
+      }
+
+      .swiper-slide.p5 p:nth-of-type(1) {
+        right: 22vw;
+      }
+
+      .swiper-slide.p3 p:nth-of-type(1) {
+        right: 31vw;
+      }
+
+      .swiper-slide.p6 input {
+        position: absolute;
+        bottom: 32vw;
+        width: 45vw;
+        height: 9vw;
+        padding-left: 2vw;
+      }
+
+      /* #select_0 {
+        left: 17vw;
+      }
+
+      #select_1 {
+        left: 52vw;
+      } */
+
+      .swiper-slide.p6 button {
+        position: absolute;
+        width: 30vw;
+        height: 10vw;
+        bottom: 11vw;
+        margin: 0 auto;
+        border: 1px solid transparent;
+        outline: none;
+        background: #a6865e;
+        font-size: 4vw;
+        color: #fff;
+        word-spacing: 5vw;
+      }
+
+      .swiper-slide {
+        background: none;
+      }
+
+      .swiper-slide.heng {
+        background: url(./static/img/p7.png) no-repeat;
+        background-size: 100% 100%;
+        filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='./static/img/p7.png', sizingMethod='scale');
+      }
+      .swiper-slide.p8 {
+        background: url(./static/img/p8.png) no-repeat;
+        background-size: 100% 100%;
+        filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='./static/img/p8.png', sizingMethod='scale');
+      }
+      .swiper-slide.p2 img,
+      .swiper-slide.p8 img {
+        width: 93vw;
+        height: 59%;
+        position: absolute;
+        top: 4vw;
+      }
+
+      .swiper-container-v {
+        /* background: #eee; */
+      }
+
+      .list {
+        margin: 50px 25px 0 25px;
+        text-align: center;
+      }
+
+      .list > li {
+        list-style: none;
+        border: #cccccc solid 1px;
+        height: 32px;
+        line-height: 32px;
+        border-radius: 5px;
+        margin-bottom: 15px;
+      }
+
+      .colors {
+        color: #e60012 !important;
+      }
+
+      .mobileSelect .content {
+        width: 96% !important;
+        border-radius: 0.3rem !important;
+        bottom: 1rem !important;
+        margin-left: 2% !important;
+      }
+
+      .cancel {
+        color: #e60012 !important;
+      }
+
+      .title {
+        color: #333 !important;
+      }
+
+      .ensure {
+        color: #007aff !important;
+      }
+
+      .selectLine {
+        display: flex;
+        align-items: center;
+      }
+
+      .selectLine span {
+        width: 33.3%;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding-bottom: 3px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="swiper-container swiper-container-h">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide p6">
+          <img src="./static/img/p6.png" alt="" />
+          <input type="text" placeholder="生产日期：" id="select_0" />
+          <!-- <input
+            type="text"
+            placeholder="生产时间："
+            value="00:00:00"
+            id="select_1"
+          /> -->
+          <button id="submitForm">查询</button>
+        </div>
+        <div class="swiper-slide"><img src="./static/img/p1.png" alt="" /></div>
+        <div class="swiper-slide heng">
+          <div class="swiper-container swiper-container-v">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide p2">
+                <img src="./static/img/s1.jpg" alt="" />
+              </div>
+              <div class="swiper-slide p2">
+                <img src="./static/img/s2.jpg" alt="" />
+              </div>
+            </div>
+            <div class="swiper-pagination swiper-pagination-v"></div>
+          </div>
+          <p>您购买的这条鱼来自</p>
+          <p>[ <span id="farms"></span> ]鳗鱼场。</p>
+        </div>
+        <div class="swiper-slide p3">
+          <p>鳗鱼检验员：<br />[ <span id="inspector"></span> ]</p>
+          <img src="./static/img/p3.png" alt="" />
+        </div>
+        <div class="swiper-slide p4">
+          <div class="swiper-container swiper-container-v2">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="./static/img/s1.jpg" alt="" class="swiper_img" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./static/img/s2.jpg" alt="" class="swiper_img" />
+              </div>
+            </div>
+            <div class="swiper-pagination swiper-pagination-v"></div>
+          </div>
+          <p>
+            烤鳗生产工厂：
+            <br />
+            [ <span id="factory"></span> ]
+            <br />
+            生产时间：
+            <br />
+            [ <span id="productionDate"></span> ]
+            <br />
+            食品生产许可证编号：
+            <br />
+            [ <span id="license"></span> ]
+          </p>
+          <img src="./static/img/p4.png" alt="" />
+        </div>
+        <div class="swiper-slide p5">
+          <p>鳗鱼检验员：<br />[ <span id="produceInspector"></span> ]</p>
+          <img src="./static/img/p5.png" alt="" />
+        </div>
+        <div class="swiper-slide p8">
+          <!-- 这里放报告图 -->
+          <img src="" id="productionImg" alt="" />
+        </div>
+      </div>
+      <div class="swiper-pagination swiper-pagination-h"></div>
+    </div>
+    <script src="./static/lib/111/mobileSelect.js"></script>
+    <script src="./static/lib/111/selectDate.js"></script>
+    <script src="./static/lib/111/layer.js"></script>
+    <script src="./static/plugin/swiper/js/swiper.min.js"></script>
+    <script>
+      var date = "";
+      $.selectYY_MM_DD("#select_0", null, function (val) {
+        date = val.year + "-" + val.month + "-" + val.day;
+      });
+      // $.select_HH_MM_SS("#select_1", function (val) {
+      //   time = val;
+      // });
+      $("#submitForm").click(function () {
+        if (!date) {
+          layer.open({
+            content: "请先选择日期",
+            skin: "msg",
+            time: 2, //2秒后自动关闭
+          });
+          return;
+        }
+
+        $.ajax({
+          url: "http://121.41.122.130:8080/update",
+          type: "get",
+          // 设置的是请求参数
+          data: { date: date },
+          // 用于设置响应体的类型 注意 跟 data 参数没关系！！！
+          dataType: "json",
+          success: function (res) {
+            if (res.success === false) {
+              layer.open({
+                content: "请求数据错误",
+                skin: "msg",
+                time: 2, //2秒后自动关闭
+              });
+              return;
+            }
+            // 插入数据
+            $("#farms").html(res.data.data.farms);
+            $("#factory").html(res.data.data.factory);
+            $("#inspector").html(res.data.data.inspector);
+            $("#produceInspector").html(res.data.data.produceInspector);
+            $("#productionDate").html(res.data.data.productionDate);
+            $("#productionImg").attr("src", res.data.data.productionImg);
+            $("#license").html(res.data.data.license);
+
+            // 关闭查询页
+            $(".p6").remove();
+
+            // 启动swiper
+            var swiperH = new Swiper(".swiper-container-h", {
+              direction: "vertical",
+              spaceBetween: 50,
+              loop: true,
+            });
+            var swiperV = new Swiper(".swiper-container-v", {
+              spaceBetween: 50,
+              loop: true,
+            });
+            var swiperV = new Swiper(".swiper-container-v2", {
+              spaceBetween: 50,
+              loop: true,
+            });
+          },
+        });
+      });
+    </script>
+  </body>
+</html>
